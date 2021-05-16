@@ -9,3 +9,8 @@ variable "ec2_region" {
   default     = "us-east-1"
   type = string
 }
+
+variable "admin_ip" {
+  default     = ["24.178.240.50/32"]
+  description = "admin IP addresses in CIDR format"
+}

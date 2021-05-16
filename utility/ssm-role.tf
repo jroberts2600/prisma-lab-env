@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ssm_role_tf" {
-  name = "ssm_role_tf_${random_pet.pet_name.id}"
+  name = "ssm_role_tf_${random_string.suffix.id}"
 
   assume_role_policy = <<EOF
 {
@@ -19,6 +19,6 @@ resource "aws_iam_role_policy_attachment" "role_attach" {
 }
 
 resource "aws_iam_instance_profile" "ssm_mgr_policy" {
-  name = "ssm_mgr_tf_${random_pet.pet_name.id}"
+  name = "ssm_mgr_tf_${random_string.suffix.id}"
   role = aws_iam_role.ssm_role_tf.name
 }
