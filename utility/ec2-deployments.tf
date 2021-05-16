@@ -5,7 +5,8 @@ resource "aws_instance" "utility_instance" {
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
-  iam_instance_profile = aws_iam_instance_profile.ssm_mgr_policy.name
+  #iam_instance_profile = aws_iam_instance_profile.ssm_mgr_policy.name
+  iam_instance_profile = var.ssm_policy
 
   tags = {
     Name = "utility-instance"
@@ -20,7 +21,8 @@ resource "aws_instance" "web_instance" {
   vpc_security_group_ids = [ aws_security_group.allow_ssh.id, aws_security_group.allow_http.id ]
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
-  iam_instance_profile = aws_iam_instance_profile.ssm_mgr_policy.name
+  #iam_instance_profile = aws_iam_instance_profile.ssm_mgr_policy.name
+  iam_instance_profile = var.ssm_policy
 
   tags = {
     Name = "web-instance"

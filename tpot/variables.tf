@@ -6,6 +6,10 @@ variable "ec2_region" {
   description = "AWS region to launch servers"
 }
 
+variable "flow_role_arn" {
+  type = string
+}
+
 variable "key_pair" {
   type = string
 }

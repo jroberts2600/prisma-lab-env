@@ -9,3 +9,11 @@ variable "ec2_region" {
 variable "admin_ip" {
   description = "Admin IP addresses in CIDR format"
 }
+
+variable "flow_role_arn" {
+  type = string
+}
+
+variable "ssm_policy" {
+  type = string
+}
