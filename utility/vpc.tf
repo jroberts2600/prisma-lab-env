@@ -4,7 +4,7 @@ resource "aws_vpc" "sandbox" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "tf-sandbox-vpc"
+    Name = "tf-sandbox-${random_string.suffix.id}"
   }
 }
 
