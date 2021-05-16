@@ -1,11 +1,7 @@
-variable "AWS_ACCESS_KEY_ID" {
+variable "key_pair" {
   type = string
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
-  type = string
-}
-
-variable "KEY_PAIR" {
+variable "ec2_region" {
   type = string
 }
