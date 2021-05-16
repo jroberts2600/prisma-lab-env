@@ -5,3 +5,7 @@ variable "key_pair" {
 variable "ec2_region" {
   type = string
 }
+
+variable "admin_ip" {
+  description = "Admin IP addresses in CIDR format"
+}
