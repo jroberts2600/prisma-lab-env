@@ -1,6 +1,6 @@
 variable "key_pair" {
   description = "Key pair to be used on ec2 instances"
-  default = "keypair"
+  default = "nv-pan"
   type = string
 }
 
