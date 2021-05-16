@@ -6,5 +6,14 @@ module "utility" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
   admin_ip = var.admin_ip
-  //source = "./utility"
+  source = "./utility"
 }
+
+/*
+module "tpot" {
+  key_pair = var.key_pair
+  ec2_region = var.ec2_region
+  admin_ip = var.admin_ip
+  source = "./tpot"
+}
+*/
