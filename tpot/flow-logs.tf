@@ -7,4 +7,5 @@ resource "aws_flow_log" "pc_flow" {
 
 resource "aws_cloudwatch_log_group" "pc_flow_log" {
   name = "tpot_flow_log"
+  retention_in_days = 1
 }

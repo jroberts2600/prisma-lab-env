@@ -14,3 +14,15 @@ output "T-Pot_SSH_Access" {
 output "T-Pot_Web_UI" {
   value = module.tpot.Web_UI
 }
+
+output "Kubectl_Config" {
+  value = module.eks.kubectl_config
+}
+
+output "Kubernetes_Cluster" {
+  value = module.eks.cluster_name
+}
+
+output "Kubernetes_Connect" {
+  value = module.eks.cluster_connect
+}

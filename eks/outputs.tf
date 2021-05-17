@@ -23,12 +23,12 @@ output "config_map_aws_auth" {
   value       = module.eks.config_map_aws_auth
 }
 
-output "region" {
-  description = "AWS region"
-  value       = var.region
-}
-
 output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = local.cluster_name
+}
+
+output "cluster_connect" {
+  description = "Connect to Kubernetes Cluster"
+  value       = "aws eks --region ${var.ec2_region} update-kubeconfig --name ${local.cluster_name}"
 }
