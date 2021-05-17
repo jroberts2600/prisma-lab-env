@@ -5,6 +5,7 @@ resource "aws_instance" "tpot" {
   subnet_id     = aws_subnet.public.id
   tags = {
     Name = "T-Pot Honeypot"
+    Defender = "false"
   }
   root_block_device {
     volume_type           = "gp2"

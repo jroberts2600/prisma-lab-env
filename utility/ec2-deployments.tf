@@ -9,7 +9,7 @@ resource "aws_instance" "utility_instance" {
 
   tags = {
     Name = "Utility Instance"
-    Defender = "false"
+    Defender = "true"
   }
 }
 
@@ -24,7 +24,7 @@ resource "aws_instance" "web_instance" {
 
   tags = {
     Name = "Web Instance"
-    Defender = "false"
+    Defender = "true"
   }
 }
 
