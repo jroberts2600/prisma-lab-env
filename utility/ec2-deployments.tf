@@ -6,6 +6,7 @@ resource "aws_instance" "utility_instance" {
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
   iam_instance_profile = var.ssm_policy
+  monitoring = true
 
   tags = {
     Name = "Utility Instance"
@@ -14,6 +15,7 @@ resource "aws_instance" "utility_instance" {
 }
 
 resource "aws_instance" "web_instance" {
+	# checkov:skip=CKV_AWS_88: Publically accessible web port
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
   key_name = var.key_pair
@@ -21,12 +23,14 @@ resource "aws_instance" "web_instance" {
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
   iam_instance_profile = var.ssm_policy
+  monitoring = true
 
   tags = {
     Name = "Web Instance"
     Defender = "false"
   }
 }
+
 
 /*
 resource "aws_instance" "test_instance" {
@@ -37,6 +41,7 @@ resource "aws_instance" "test_instance" {
   subnet_id = aws_subnet.public.id
   associate_public_ip_address = true
   iam_instance_profile = var.ssm_policy
+  monitoring = true
 
   tags = {
     Name = "Test Instance"

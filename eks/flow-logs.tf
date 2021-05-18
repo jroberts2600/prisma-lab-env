@@ -6,6 +6,6 @@ resource "aws_flow_log" "pc_flow" {
 }
 
 resource "aws_cloudwatch_log_group" "eks_flow_log" {
-  name = "eks_flow_log"
+  name = "eks_flow_log-${random_string.suffix.id}"
   retention_in_days = 1
 }
