@@ -10,7 +10,7 @@ resource "aws_instance" "utility_instance" {
 
   tags = {
     Name = "Utility Instance"
-    Defender = "false"
+    Defender = "true"
   }
 }
 
