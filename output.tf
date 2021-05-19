@@ -4,7 +4,7 @@ output "Utility_Instance_SSH_Access" {
 output "Web_Instance_SSH_Access" {
   value = module.utility.web_instance_public_ip
 }
-output "test_instance_public_ip" {
+output "Test_Instance_SSH_Access" {
   value = module.utility.test_instance_public_ip
 }
 

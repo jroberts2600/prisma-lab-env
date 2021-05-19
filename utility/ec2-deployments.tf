@@ -44,6 +44,6 @@ resource "aws_instance" "test_instance" {
 
   tags = {
     Name = "Test Instance"
-    Defender = "false"
+    Defender = "true"
   }
 }
