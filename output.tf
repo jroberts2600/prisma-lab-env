@@ -4,6 +4,9 @@ output "Utility_Instance_SSH_Access" {
 output "Web_Instance_SSH_Access" {
   value = module.utility.web_instance_public_ip
 }
+output "test_instance_public_ip" {
+  value = module.test_instance.test_instance_public_ip
+}
 
 output "T-Pot_Admin_UI" {
   value = module.tpot.Admin_UI

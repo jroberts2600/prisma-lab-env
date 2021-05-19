@@ -27,12 +27,11 @@ resource "aws_instance" "web_instance" {
 
   tags = {
     Name = "Web Instance"
-    Defender = "false"
+    Defender = "true"
   }
 }
 
 
-/*
 resource "aws_instance" "test_instance" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
@@ -48,8 +47,3 @@ resource "aws_instance" "test_instance" {
     Defender = "false"
   }
 }
-
-output "test_instance_public_ip" {
-  value = aws_instance.test_instance.public_ip
-}
-*/
