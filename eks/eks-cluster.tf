@@ -34,9 +34,10 @@ module "eks" {
   ]
 }
 
-
+/*
 resource "aws_elb" lb {
   name = "elb"
+  availability_zones = data.aws_availability_zones.available.names
   subnets = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   listener {
     instance_port = 8080
@@ -45,6 +46,7 @@ resource "aws_elb" lb {
     lb_protocol = "http"
   }
 }
+*/
 
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
