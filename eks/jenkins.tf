@@ -61,8 +61,8 @@ resource "kubernetes_service" "jenkins" {
   spec {
     port {
       port        = 80
-      target_port = "8079"
-      node_port   = 30001
+      target_port = "8080"
+      node_port   = 30002
     }
 
     selector = {
