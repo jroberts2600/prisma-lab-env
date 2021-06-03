@@ -18,6 +18,26 @@ output "T-Pot_Web_UI" {
   value = module.tpot.Web_UI
 }
 
+//
+// Kubernetes Specific Outputs
+//
+
 output "Kubernetes_Connect" {
   value = module.eks.cluster_connect
+}
+
+output "cluster_id" {
+  value = module.eks.cluster_id
+}
+
+output "cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+
+output "kubectl_config" {
+  value = module.eks.kubectl_config
+}
+
+output "config_map_aws_auth" {
+  value = module.eks.config_map_aws_auth
 }
