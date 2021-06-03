@@ -47,7 +47,7 @@ resource "kubernetes_deployment" jenkins {
     }
   }
 }
-
+/*
 resource "kubernetes_service" "jenkins" {
   metadata {
     name      = "jenkins"
@@ -72,3 +72,4 @@ resource "kubernetes_service" "jenkins" {
     type = "LoadBalancer"
   }
 }
+*/
