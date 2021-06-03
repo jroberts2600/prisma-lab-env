@@ -36,7 +36,7 @@ module "eks" {
 
 
 resource "aws_elb" lb {
-  name = "Kubernetes Load Balancer"
+  name = "elb"
   availability_zones = data.aws_availability_zones.available.names
   subnets = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   listener {
