@@ -4,10 +4,10 @@ resource "kubernetes_namespace" "jenkins" {
   }
 }
 
-/*
 resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
+    namespace = kubernetes_namespace.jenkins.id
   }
   spec {
     replicas = 1
@@ -44,4 +44,3 @@ resource "kubernetes_deployment" jenkins {
     }
   }
 }
-*/
