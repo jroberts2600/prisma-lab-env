@@ -27,7 +27,7 @@ resource "kubernetes_deployment" jenkins {
           image = "jenkins/jenkins:lts-jdk11"
           name = "jenkins"
           port {
-            container_port = 80
+            container_port = 8080
           }
           volume_mount {
             name = "jenkins-home"
