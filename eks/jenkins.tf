@@ -8,6 +8,9 @@ resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
     namespace = kubernetes_namespace.jenkins.id
+    labels = {
+      app = "jenkins"
+    }
   }
   spec {
     replicas = 1
