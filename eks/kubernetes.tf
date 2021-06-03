@@ -20,13 +20,4 @@ provider "kubernetes" {
       data.aws_eks_cluster.cluster.name
     ]
   }
-  exec {
-   api_version  = "client.authentication.k8s.io/v1alpha1" 
-   command      = "kubectl"
-   args = [
-     "get",
-     "po",
-     "-A"
-   ]
-  }
 }
