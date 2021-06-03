@@ -4,7 +4,6 @@ resource "kubernetes_namespace" "sock_shop" {
   }
 }
 
-/*
 resource "kubernetes_deployment" "carts_db" {
   metadata {
     name      = "carts-db"
@@ -426,7 +425,7 @@ resource "kubernetes_service" "front_end" {
       name = "front-end"
     }
 
-    type = "NodePort"
+    type = "LoadBalancer"
   }
 }
 
@@ -1111,5 +1110,3 @@ resource "kubernetes_service" "user" {
     }
   }
 }
-
-*/
