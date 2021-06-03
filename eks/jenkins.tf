@@ -44,3 +44,21 @@ resource "kubernetes_deployment" jenkins {
     }
   }
 }
+
+resource "kubernetes_service" jenkins {
+  metadata {
+    name = "jenkins"
+    namespace = kubernetes_namespace.jenkins.id
+  }
+  spec {
+    selector = {
+      app = kubernetes_deployment.jenkins.metadata.0.labels.app
+    }
+    session_affinity = "ClientIP"
+    port {
+      port = 8080
+      target_port = 80
+    }
+    type = "LoadBalancer"
+  }
+}
