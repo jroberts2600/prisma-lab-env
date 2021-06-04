@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "jenkins" {
     name = "jenkins"
   }
 }
-/*
+
 resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
@@ -62,7 +62,6 @@ resource "kubernetes_service" "jenkins" {
     port {
       port        = 80
       target_port = "8080"
-      node_port   = 30002
     }
 
     selector = {
@@ -72,4 +71,3 @@ resource "kubernetes_service" "jenkins" {
     type = "LoadBalancer"
   }
 }
-*/

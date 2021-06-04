@@ -375,7 +375,7 @@ resource "kubernetes_deployment" "front_end" {
           image = "weaveworksdemos/front-end:0.3.12"
 
           port {
-            container_port = 8079
+            container_port = 8080
           }
 
           resources {
@@ -417,8 +417,7 @@ resource "kubernetes_service" "front_end" {
   spec {
     port {
       port        = 80
-      target_port = "8079"
-      node_port   = 30001
+      target_port = "8080"
     }
 
     selector = {
