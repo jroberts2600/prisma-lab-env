@@ -417,7 +417,6 @@ resource "kubernetes_service" "front_end" {
   spec {
     port {
       port        = 80
-      target_port = "8080"
     }
 
     selector = {
