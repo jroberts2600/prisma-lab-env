@@ -28,3 +28,7 @@ output "Kubernetes_Connect" {
 output "Sock-Shop" {
   value = module.eks.sock-shop_url
 }
+
+output "Jenkins" {
+  value = module.eks.jenkins_url
+}
