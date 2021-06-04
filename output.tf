@@ -24,15 +24,3 @@ output "T-Pot_Web_UI" {
 output "Kubernetes_Connect" {
   value = module.eks.cluster_connect
 }
-
-output "cluster_id" {
-  value = module.eks.cluster_id
-}
-
-output "cluster_endpoint" {
-  value = module.eks.cluster_endpoint
-}
-
-output "kubectl_config" {
-  value = module.eks.kubectl_config
-}
