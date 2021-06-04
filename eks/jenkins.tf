@@ -64,7 +64,7 @@ resource "kubernetes_service" "jenkins" {
     }
 
     selector = {
-      name = "jenkins"
+      app = "jenkins"
     }
 
     type = "LoadBalancer"
