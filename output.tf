@@ -1,4 +1,3 @@
-/*
 output "Utility_Instance_SSH_Access" {
   value = module.utility.utility_instance_public_ip
 }
@@ -15,7 +14,6 @@ output "T-Pot_SSH_Access" {
 output "T-Pot_Web_UI" {
   value = module.tpot.Web_UI
 }
-*/
 
 //
 // Kubernetes Specific Outputs
