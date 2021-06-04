@@ -35,5 +35,5 @@ output "cluster_connect" {
 
 output "sock-shop_url" {
   description = "Sock Shop Application"
-  value       = kubernetes_service.front_end.spec[1].external_ips
+  value       = kubernetes_service.front_end.spec[0].external_ips
 }
