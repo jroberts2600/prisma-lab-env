@@ -24,3 +24,7 @@ output "T-Pot_Web_UI" {
 output "Kubernetes_Connect" {
   value = module.eks.cluster_connect
 }
+
+output "Sock-Shop" {
+  value = module.eks.sock-shop_url
+}

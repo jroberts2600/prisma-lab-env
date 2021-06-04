@@ -32,3 +32,8 @@ output "cluster_connect" {
   description = "Connect to Kubernetes Cluster"
   value       = "aws eks --region ${var.ec2_region} update-kubeconfig --name ${local.cluster_name}"
 }
+
+output "sock-shop_url" {
+  description = "Sock Shop Application"
+  value       = kubernetes_service.front_end.id
+}

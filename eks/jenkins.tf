@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "jenkins" {
     name = "jenkins"
   }
 }
-/*
+
 resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
@@ -27,7 +27,8 @@ resource "kubernetes_deployment" jenkins {
       }
       spec {
         container {
-          image = "jenkins/jenkins:lts-jdk11"
+          //image = "jenkins/jenkins:lts-jdk11"
+          image = "public.ecr.aws/q6t7l4t3/jenkins-tf:0.1"
           name = "jenkins"
           port {
             container_port = 8080
@@ -70,4 +71,3 @@ resource "kubernetes_service" "jenkins" {
     type = "LoadBalancer"
   }
 }
-*/
