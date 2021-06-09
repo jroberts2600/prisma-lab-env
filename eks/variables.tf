@@ -6,7 +6,7 @@ variable "flow_role_arn" {
   type = string
 }
 
-variable "pcc_wss" {
+variable "pcc_ws" {
   type = string
 }
 

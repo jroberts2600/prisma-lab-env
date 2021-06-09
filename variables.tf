@@ -6,7 +6,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type = string
 }
 
-variable "pcc_wss" {
+variable "pcc_ws" {
   type = string
 }
 
