@@ -358,7 +358,7 @@ resource "kubernetes_service" "defender" {
 }
 */
 
-
+/*
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
@@ -551,7 +551,8 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
 
         container {
           name  = "twistlock-defender"
-          image = "registry-auth.twistlock.com/tw_fqpwkggy0nlmjnhxfpz6kqqqym2jqpfn/twistlock/defender:defender_21_04_421"
+          //image = "registry-auth.twistlock.com/tw_fqpwkggy0nlmjnhxfpz6kqqqym2jqpfn/twistlock/defender:defender_21_04_421"
+          image = "${var.pcc_image}"
 
           env {
             name  = "WS_ADDRESS"
@@ -712,3 +713,4 @@ resource "kubernetes_service" "defender" {
   }
 }
 
+*/
