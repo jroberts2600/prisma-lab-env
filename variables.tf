@@ -14,6 +14,30 @@ variable "pcc_image" {
   type = string
 }
 
+variable "pcc_admission-cert" {
+  type = string
+}
+
+variable "pcc_admission-key" {
+  type = string
+}
+
+variable "pcc_ca" {
+  type = string
+}
+
+variable "pcc_client-cert" {
+  type = string
+}
+
+variable "pcc_client-key" {
+  type = string
+}
+
+variable "pcc_service-parameter" {
+  type = string
+}
+
 variable "key_pair" {
   description = "Key pair to be used on ec2 instances"
   default = "nv-pan"
