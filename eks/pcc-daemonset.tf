@@ -2,7 +2,7 @@ resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
   }
-
+/*
   rule {
     verbs      = ["list"]
     api_groups = ["rbac.authorization.k8s.io"]
@@ -350,4 +350,4 @@ resource "kubernetes_service" "defender" {
     }
   }
 }
-
+*/
