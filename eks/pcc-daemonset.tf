@@ -1,10 +1,10 @@
+/*
 resource "kubernetes_namespace" "twistlock" {
   metadata {
     name = "twistlock"
   }
 }
 
-/*
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
