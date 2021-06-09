@@ -1,8 +1,15 @@
+resource "kubernetes_namespace" "twistlock" {
+  metadata {
+    name = "twistlock"
+  }
+}
+
+/*
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
   }
-/*
+
   rule {
     verbs      = ["list"]
     api_groups = ["rbac.authorization.k8s.io"]
