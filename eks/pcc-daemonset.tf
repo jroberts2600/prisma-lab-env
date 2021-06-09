@@ -358,7 +358,6 @@ resource "kubernetes_service" "defender" {
 }
 */
 
-/*
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
@@ -556,7 +555,8 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
 
           env {
             name  = "WS_ADDRESS"
-            value = "wss://pcc.ng20.org:8084"
+            //value = "wss://pcc.ng20.org:8084"
+            value = "wss://${var.pcc_ws}"
           }
 
           env {
@@ -712,5 +712,3 @@ resource "kubernetes_service" "defender" {
     }
   }
 }
-
-*/
