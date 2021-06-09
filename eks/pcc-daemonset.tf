@@ -1,9 +1,3 @@
-resource "kubernetes_namespace" "twistlock" {
-  metadata {
-    name = "twistlock"
-  }
-}
-
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
@@ -77,9 +71,9 @@ resource "kubernetes_secret" "twistlock_secrets" {
   }
 
   data = {
-    "admission-cert.pem" = "-----BEGIN CERTIFICATE-----\nMIIDTDCCAjSgAwIBAgIRAJYZMC0PVg+Ht1OK9N5ip70wDQYJKoZIhvcNAQELBQAw\nKDESMBAGA1UEChMJVHdpc3Rsb2NrMRIwEAYDVQQDEwlUd2lzdGxvY2swHhcNMjEw\nNjA5MTc0OTAwWhcNMjQwNjA4MTc0OTAwWjAUMRIwEAYDVQQKEwlUd2lzdGxvY2sw\nggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCnh4j0nLf1zqjpx1+qwntY\npicHL1ePFb9VNhUUWY4c2v7d4Oyt0WFPtaon99aaGR4KpzC5Z3Wb68039nMreyMT\npEi95/1KlR/YwzM3b5tg3kUYq9R2CNfOk7xkJhbVcZP3TKhelB2UoH7jtrO+W4bs\nCtnR7bz+9RVF/CJKqFLYr+cMJdcxUcfL3LhgJf6z+/5un29c9dZR7SnztruqDFM5\nuPfJjoeYdkWEYZ9sp1Lb9tUG0cEGvZv0Zpao8HiQ44RA365hWD9A7SIA0lyemRoP\nLlEfFZyH8yQNvj9d/pykbDPiFh83v49hURzAb6iV0VXgmpCQKx+41p4mi5b+tYwJ\nAgMBAAGjgYQwgYEwDgYDVR0PAQH/BAQDAgOoMB0GA1UdJQQWMBQGCCsGAQUFBwMC\nBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFCPNZSm3x6jCc1De\nUXRfj21dKWZ1MCEGA1UdEQQaMBiCFmRlZmVuZGVyLnR3aXN0bG9jay5zdmMwDQYJ\nKoZIhvcNAQELBQADggEBALBlGZDdhMFjOsSYo/X0xonB8DT0CvdAZxAMeyqc5Qau\nITnWu7uwvmhhfDFsbCCHcvi+PI8qMKnwXEoKhqhP47dIprLoT7CswplXmQU7BYl3\n3Ui0p/wVTYKvxyeMvJxYpS6mj5pENPv5d2MX0kKWFqyPYyhIvzZdZwoJPgKlND/I\nYCs4itB9DTif1kDWUHd81fCri/HCXzkABD0cFg+tjSkCLJ+C+SrnAfDMkkgftl5A\nwbM05ECtWVUnQ0ImNRdRbRCvPSY6MsjiO7JVgF4VOAi0TIv8fgW0nbp+Qb38SlHJ\nJHm50JUCCgu5NIM+242S1w5hgMHEVT54871GhU0JpFA=\n-----END CERTIFICATE-----\n"
+    "admission-cert.pem" = "-----BEGIN CERTIFICATE-----\nMIIDTDCCAjSgAwIBAgIRAMT6Uo8yogR2S2D9naoTBXQwDQYJKoZIhvcNAQELBQAw\nKDESMBAGA1UEChMJVHdpc3Rsb2NrMRIwEAYDVQQDEwlUd2lzdGxvY2swHhcNMjEw\nNjA5MTgxMTAwWhcNMjQwNjA4MTgxMTAwWjAUMRIwEAYDVQQKEwlUd2lzdGxvY2sw\nggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQD4PFs4ztMYYzvikg/UGhL1\nKviXMbx6bCpHc0ETZUpbyb6jAPPmLz3EViQV/cyqOotwsOscQMHJNnEqvVabqx0k\nfuQwlDuHKS9GjT8OoPywoCTYUj2u5KFwCUtcbYbvfDCRUKjQAva2c9+Gusp/X6xt\n5CoWUxwUFEPecBlg9WW5aEBq2x9S5mN3K9f91gWJu2jtgyZNTgbJ232MDH/wRWZr\neW611bv70n/RDiTySkTg2sRUYW0WWeQQimF53G/HKtb70MOeAYADXiR2PrUEEjEF\nDhNrqfJQawvFoIvPwaQC5gUBnmhoAe6fwD09s2VSzkaAjMVfUstojy+F7sLNv03r\nAgMBAAGjgYQwgYEwDgYDVR0PAQH/BAQDAgOoMB0GA1UdJQQWMBQGCCsGAQUFBwMC\nBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFCPNZSm3x6jCc1De\nUXRfj21dKWZ1MCEGA1UdEQQaMBiCFmRlZmVuZGVyLnR3aXN0bG9jay5zdmMwDQYJ\nKoZIhvcNAQELBQADggEBAA8Of69QZkUWUtcV54zDUpXiIrHrM4Zh64XHXuO1GRAW\ndGkxGhh/JYzHt8HDM6IOwVfUF0OSPhBmyBo7b7ya3DMYHbincGQJI80o4OCpTSls\nnvFkXx3qXcie9reikBs5OCCJODnOX6RK25/3T8W2lmVPaqPpQKanpbOy7qyZavXG\nOGKHUF7DGDZ36zR+rjo8s8tsD4+Lvxao7hqPyyAxHYQ79zUxL+xO5JEh4DFkbIXr\nDxZRept5vMyVYFxSScBA9DBL9Rj8y7AoJQFc0IvymLF2aZPDdFnr0LhQMgpAj6fT\nu4/HGecf4SOSqAWfcolQlEV1XC1MFVgfQMbDNzipD38=\n-----END CERTIFICATE-----\n"
 
-    "admission-key.pem" = "-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,e48b29c5734ba846409e729e7f545b08\n\nZykKCqOUFTwxoFfEm1lpMlRvUBHpV7JSo++uO1SvCFmDfS4tmtHQsUzU6uhKyQlO\nA0n7YX/a75e9lvXRntzMMwko2cvD3NYDD1BPcZgi5DovVemDq4hV1KHWB3hfOI8v\n/5MHjWPt/gixBXql+42ep2Jmuk3zlakLwV3cpjGUa4fQaD4pZArKql8a7fIu1PV1\nnY2lNtN+fPCO7nJhWvQoFsnn8ELE/5Wqn4trE1PWisioECW5lkML9Lf5OLSK5dIK\nkA8Ieeb+PMvORS712xTuwA0zmvE5sfa3PnxS5lgUxczgWktFq8QCS4fH6k1bznWC\nK648HvIdPWFTxawaNtRTxZCA91MT/i218FDRunatlCubA1/1TUZToero8jfDpP3w\nZ3zgNa0YXV8VrE30G4/6VbfnFkE1h6dObokDwd/uFtiGL1b48lpzjMV73QBea+dQ\nEoqUtX0TJbAW6HDvrMZER7bLJv28CT0VqohhXnZJuJg3p8pWE6u0dbUV2nj4o+wa\n207Evnd9pmkQ0XycIkivW3FXsRN7R8j69QWvEIFHh5SRgQGD/C6Cb23z8abnXB7X\new0Avxx+fXdqdul6WZjM/Gk3I+G3m8ppCVpUVLDfJRXf0dQP3989eR87MkpQK43Z\neEwP33FMa/Neehs5liNmDadKcgy1ByMfXsbpnL3+WyO4NO4OjMG7PDEQCpNPjLYe\nxkdj90JIPfg737tUnc9V3zUCijcQGrMemQUFEBK6e7hRszE8O60pfzVtsir58vFW\nvgRqFT1Qk15u0tGJ+i8zws6KXB5rTr8LQNi4SLXrxZq7c9tGClTNuwKl4ihKb2Fl\npVKymMNJ1TwOu26tVBcMR0igveaeEzVKmY0+M9Qwgm3Pr5K4YzJd+9UDo+o3GkJm\niqEmixnfWXjP0lcjRHWIqypFGV8HOocJHLEVxQzVERusMUqGYUtTDpGC9YHgVINn\n4wKJjgXMUzu00kMCHkSqUusu03RyQQ/gtR+o1rzkia2B0NDSE4c8/ROFm08YjMhF\nGDMNsHBhO+aSI1vgiyta7Y+Ah5nlPELh43Euj72CMPu4lgmUKJIxYXj3Xmx8Znib\nrZnSLIAaehcsGfU7YzB/oZQ2OnPrMeO1zJatDTw8RYX4mmjGyJMxM8Smdn3rVsPs\ni/fCcGxz3TQShKn+Dqpf2M0DDNAhtxem8M/W17mqURFix0oUJLzkQwDjV2wodNjj\nC+t/+PWDxNAZ4/hhl9iW31DnyJTeTDSJpnS8+ZhKS44yx+zQKhGuH7JdkV523j8u\nkV5NBAmY1KKHKPzVdyI2MYpAe7zOBOYcPQjdS+udZIUwZFBfyGx5O2s+N2gFkZfl\nKhOVrBap079AJamlsaPkLJ2Iak2VdrnZqTu/bj29tm7476C3ymcY5aI16iu6gG3v\nVot7iSRWh4rGOsoZ1UcVWP5TfLU3O3DetNod67CN0LD8AgxtLaIwK3WNgW7z4FAJ\nPYELw7RkYDgrRp5TLhpg+smFTX0zIJJebGqhLoS5gKHnHTzwGNZNQxFTM+K1puga\nlSuTF3U8KNaQTF+Qr/dBr6szjrPD70xGWkDC1MCgYtiQ7zoNMhEqgR/m6qpKeh9B\n-----END RSA PRIVATE KEY-----\n"
+    "admission-key.pem" = "-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,df6d2a0f73b7ffbd7fca9d602db47d4a\n\nnnaffD8e8cXeqOHhWnTKPqqRSExWsMX6QZuoVXX+wysDRQ1Y8YATRM98gC97yr3J\nHgNrbfQ1Cnhqc8rxHPRNIwvVp1Uq1kflWmVNz17u0BXF7DakyBonmmisHtLrPRz/\n6iLfRQEKqUOSGWi9IEai5kyT26E68iLz3+rzJCS+mOb0f5PNVqMRCFOH7n0ysy31\nZ3QT1PHLp3ZD2BWGGito3Yhw1DmRl1pM58XuB1FAlJfV+APWU8VxSwJvZuhRwx60\nxx2rqk+gRrNh9ezfcci5fz4hIUDXH79yYethMyE/8oPWGiI3YC04JEtQHH9xKAdf\n2L8UOjMQhYXgfobo34Tj4FPl94gPmdx0Glxw7Q4+k+9fObRjPhB2PAnP2aZjwAKi\nPaXIdJU7aMLL20IWpQZHIDbYvCcqpXJMyXf2zT+GPvOlGGv2OlPgTxgI0dvgVRV4\n5WgKRR2dueb1mtD4DxLAbYHjV+NF/M6DTRiRixaxA6BD3OA9VAYE/yWee7oqbODI\nfh2mnIiO09YBJ8xkleEmXDfEj5/CBcRBW99ayvRGYW8ghKS1z+q9kHF302gBp+Ud\n7j3RUoQg5jHzdN4+brHV8BwE35C3Txt7iqXTL1oUbb0WcK45ySs4x/fpbM8EjO8i\nZiZBHtROIy48oWyelrZtKfdQuBqCwWvwYU3V/wLKvcFSV9pBFOqO6wWNNLT2ICuz\n4WjjhqlYTuLrt5Z7ZJaKOSJ/VDDHnQv2+q5MPkGD6Selbe/2V7++A2nA0lZXOtKY\nZhFPCQsYFWY+693PRkXm+/NRUB7M1KVIK52Op9Yx9npn+cs95dwFJOIKvbYGa4bZ\n6gSWP/lCjuXQlnBNUNJz9Kj2vA605Zg6BnFctULCY/17VXZ+RKguM7NrF+2XOIAe\nRXILlS8zv8BwvmafS/Jj330F96LP8c4Xqr8LH46rOMaz65p/myNvW4lrLdg9tHZ6\n5PySHnx2mJssZhn0M7kpH3XryxKUCzalOO9puabQJW7vgfAJIQkumExQlhJlocgI\nCamHDxoAJvZnTX1Vwlr87KJUJTPQVzCvyDjACODdI+wIHRnpTwkEl7qo5PiwLCDR\n0LdqQMW7OORaQ1osxcAleBlqP52zyBeG27zZoLriOGsLQJks5/81anVZRg0QbYcE\nz/abfhCyrLForCAm9gb+50gDhGgRL+9STjtX7apZgwLuWzz3P871yfBRKQ5SJYIu\nZv1BKm63BN8pHGJk8hFJ2tBA/+ZX8lq/dcNnI5Y5K9IMvLSNNpBbeI6WkrLDXJ6w\n0IlB49ZZ4BS6sytLOMSkR36FvSxNd4w/qAhV87HnNe8el4OnL95JgfT9fH78rMoM\nGBqJJ1j5vlxDIvs7Br5c33UOXRnBw8SM7+JwQQRToMkx9r1ipymzTPTXQn9QgBFk\n+7HpJF0+AoRF5th1tlRuTsuKc6rdwdDBO0cLdShHsNrmIvhoPV60hQTDcERYlIp4\nc/l+84PGJ3V41ATv73PdLXzsKaHg/II1kpsycSlGBXyNEMSLrsch+OVct+7Uhxh7\npLMD7ErBeF5C8DhY/o4hX0TltppKTIK6xKgKLWlGkCsJIoYnQY6nhpqPxXhgRU5y\n-----END RSA PRIVATE KEY-----\n"
 
     "ca.pem" = "-----BEGIN CERTIFICATE-----\nMIIDHTCCAgWgAwIBAgIRAO2ztjTYmdGK7Hzu47se9uEwDQYJKoZIhvcNAQELBQAw\nKDESMBAGA1UEChMJVHdpc3Rsb2NrMRIwEAYDVQQDEwlUd2lzdGxvY2swHhcNMjEw\nNjAyMTM0NzAwWhcNMjQwNjAxMTM0NzAwWjAoMRIwEAYDVQQKEwlUd2lzdGxvY2sx\nEjAQBgNVBAMTCVR3aXN0bG9jazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC\nggEBALxfMUp4XG1U1chl9MTbtaCEOyjik7/Yi5yfO3lYwfZH2TIlBRCoucMQsUxB\nTWNze6zCkWZYv6BQE73ztHwWkRJT/LsIe7kWNy4XzAsOIYJMe4kNnLINeRIt3bUa\nGEDIvrTXMiE0CakrnKwdy7xfKArCekLAnMWtGxf6GcH/8Xivf02mt1+l6LSYYwDF\nYd1UQ5Ufaxa48cNsJZiDpkH4MSZKu98YnYmZAJ0/oE5z5RnVnxiSOu1EQWSCYom5\nS3hiRrDxzxDUmApv494vydKzSn/JCgXLCG1DngH/ssRFPOlIp8xy7p/wCZQw9xwZ\nQRZCx9GJVhmO4I5UFGqqMQ5cuS0CAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKsMA8G\nA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFCPNZSm3x6jCc1DeUXRfj21dKWZ1MA0G\nCSqGSIb3DQEBCwUAA4IBAQA4y4hRgeAYKjwINhO570upzmL8HsgtXakqIOwjVzSQ\nyHKH3+MeVxeaQaPFSOEv/wN9H2vU5lHPIdcKpiXDPA6A8SG/1ZbFEQXi64vJFfgr\nIBcL4qdjBXruhx4qLpbV+mcLSp7lvtwbQ4YD8FXAHaELuYdkeEt481XDyTZwMVfd\n72rS/+4G36WXxDn28uYnPo0DrxfnB0qCsQ3vp+jX8Y10xdPVa/PGx8mPJoP5y/Ho\nVX81RGksbq1NIjEpS8CJFYnYU/Sta3JCWI/rHttOujND8+3Iq0Zot9cn/vO5SCYa\n3UzK6VnpksFHsyQ+kGHswlLGRTQZtN1OjyhHO0GW/XBd\n-----END CERTIFICATE-----\n"
 
@@ -187,18 +181,6 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
         }
 
         volume {
-          name = "defender-data"
-        }
-
-        volume {
-          name = "cri-data"
-
-          host_path {
-            path = "/var/lib/containers"
-          }
-        }
-
-        volume {
           name = "iptables-lock"
 
           host_path {
@@ -212,12 +194,12 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
 
           env {
             name  = "WS_ADDRESS"
-            value = "wss://${var.pcc_wss}"
+            value = "wss://${var.pcc_ws}"
           }
 
           env {
             name  = "DEFENDER_TYPE"
-            value = "cri"
+            value = "daemonset"
           }
 
           env {
@@ -242,7 +224,7 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
 
           env {
             name  = "DEFENDER_CLUSTER_ID"
-            value = "3736a2a4-5679-6112-64a4-1eea5064baac"
+            value = "84239bbc-72b6-4182-7a7e-b09ed5fcd2ed"
           }
 
           env {
@@ -320,16 +302,6 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
           volume_mount {
             name       = "auditd-log"
             mount_path = "/var/log/audit"
-          }
-
-          volume_mount {
-            name       = "defender-data"
-            mount_path = "/prisma-static-data"
-          }
-
-          volume_mount {
-            name       = "cri-data"
-            mount_path = "/var/lib/containers"
           }
 
           volume_mount {
