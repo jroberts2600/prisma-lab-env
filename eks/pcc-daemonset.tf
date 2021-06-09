@@ -1,4 +1,3 @@
-/*
 resource "kubernetes_namespace" "twistlock" {
   metadata {
     name = "twistlock"
@@ -357,4 +356,3 @@ resource "kubernetes_service" "defender" {
     }
   }
 }
-*/
