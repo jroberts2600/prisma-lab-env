@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "twistlock" {
     name = "twistlock"
   }
 }
-/*
+
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
@@ -89,8 +89,8 @@ resource "kubernetes_secret" "twistlock_secrets" {
     //"client-key.pem" = "${var.pcc_client-key}"
     "client-key.pem" = "-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,8859acb816180f8749547be477352ce7\n\nMCIB5tH0u45hCNovWi6rwEtBqxdMuIECqDmcmUnhHuSIf8QEl2F+sVaU09FitdEX\ntiXuqg8PDLHYFtvnMiiKuZtxx99ecJkHvgyStZ6tIVhrzm9kTYgfzYFhUNv8dnI/\n0kRtKruzN+c9i3+ZcakidaCbA75mET+GeVtAs3O77WvGmTmcogCCsGpKa3T3WvV+\nWtAy2lp8W3K0ESC3hzow95ADGenm8sT7/N/+dXOonWEMeK8HMRZMG5UQOZUE8yYl\ndc1avgSyk4tKiV5obUjIs/IbFOR1o/qbZWq7zoYHjAVydPb7jnuxEy9UOcqOALWZ\nY86B1koOoZ7ggRJpMvTFP4DjGilXSrBWy/HQPz2eiCoHxFm/y/nY7kdd5VUVwnds\n3KY9A8RQQxPh1grunJkc/OlxhQE+Cplaum+JBNJYVvTZSEpWNpBLJyiEyrfZ+Av+\nak+EBHR0iwiRsU+LMoKGwgdYsfyHhtmH7ephoPMxOhEgbs/5cO7mxEXKqtDaMZnE\nYn5WgAMT+gpH41K8gyyIGlrdAZNsJ3iThc6K96f4i61KIxu1YY/YGVxXVYGL1YIq\nW4613wvZs8jNfSr41cG2FR6NFEDUXmVy2EzxKGT+t6ceoSQWVDpFmV+MTlDGp6ei\nYIdQSiP19CgVw1C6unuxo7nsnrPwEjldc8NYX4/IA6JKuIgbz9oJPBsG17ouyFoP\nQkUfGlVJT1VgwKj4wGQTN6I4oDYDKWMfINrhmZk5KLQl/t09SIsJQHfryNR4wjsr\nqxDBDzkU4rpEkYKQHSAmGu31sI4yDNkJnDgnmaGa7/AKOtKEk0MIGjk4htiohpHU\nRdNYxspgrYCfFRZ87sIEZBZs7LuNOfQqHeCf8S4tfVeBUXcxvT+4Q9k56VPd0isS\n5Ugn/kQMBOa1pPAOt2sSUpX8JZBHpfGjbMpXWh2VeBcMMQBzu1ZLVHWv4D5/8XEL\nPFerpFfBxy/UxKKmb3pGPnXjXWQluVJgyGS0pacHuzwd9AF7yCk2UmxUPnSSvbaZ\n6H7CdBFuUaBpanlHgpMUF6vk2Ril+28PK/rC6PerGSbSxvSmEtaC0qx1mUhRXIFP\navFY8+g4YfsddzcvfS1YOHycFVLWLKRdxgDqNIGEeHtkp6ZpaIJ6a7h9F8JThC25\nWTDCjNus9YIOEhqJg5GmZBkc4pWmQ/7EeuyC4wfh6epyAVIJ/vuQkyexawbXXi7E\nvvH9MEuu1Zjwz1paq2h8mjQBLO5Q2zuSfECqRBxQYSkGSk5/WsrH2I4jSMNr6c4P\n5hBpLxA9RnAZJ+FTI+dyt2HEHhGErz0OPnfmn4sBJjXJ+KB7UFEREIyaoGsfoCpj\nwBYHiQU/VAVmsQwYQe5m4WvhgRePygjEGjhdweG3lVaU0nRicT5yMjkIQsS+2b+N\n5yF2oq4wnSxjH3DVnKPyxZiXyXXVaYWfJiFdzABfO2MVqtVHCOUe2el8IhB/J/Ue\ngm0EfA4Qv4qJ/CHW0ZQpc8HKAUuPh6faclCNhzflCWKYtYXtEmxQsOOYC9QC2Jn4\nbqleTf1O5Ua2KoXm5k1RYGuy0PwJVGZES7h1tnWfuDW+1Sn2UoX1IP9MeAClY6l9\n-----END RSA PRIVATE KEY-----\n"
 
-    //service-parameter = "${var.pcc_service-parameter}"
-    service-parameter = "kNcVfS6owhoKs+jZvo8By+foV7+hKoKUDdsw6ZHHYU5kJr/isy1W58q5IivrHP6P5Vlxb41ms5RkNVlXTvmx+w=="
+    service-parameter = "${var.pcc_service-parameter}"
+    //service-parameter = "kNcVfS6owhoKs+jZvo8By+foV7+hKoKUDdsw6ZHHYU5kJr/isy1W58q5IivrHP6P5Vlxb41ms5RkNVlXTvmx+w=="
   }
 
   type = "Opaque"
@@ -361,4 +361,3 @@ resource "kubernetes_service" "defender" {
     }
   }
 }
-*/
