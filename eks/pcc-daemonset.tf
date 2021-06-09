@@ -618,12 +618,12 @@ resource "kubernetes_daemonset" "twistlock_defender_ds" {
           }
 
           resources {
-            limits {
+            limits = {
               cpu    = "900m"
               memory = "512Mi"
             }
 
-            requests {
+            requests = {
               cpu = "256m"
             }
           }
