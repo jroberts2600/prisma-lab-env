@@ -28,7 +28,7 @@ module "tpot" {
 
 module "eks" {
   ec2_region = var.ec2_region
-  pcc_wss = var.pcc_ws
+  pcc_ws = var.pcc_ws
   pcc_image = var.pcc_image
   flow_role_arn = module.iam.flow_role_arn
   source = "./eks"
