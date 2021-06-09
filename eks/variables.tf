@@ -6,6 +6,14 @@ variable "flow_role_arn" {
   type = string
 }
 
+variable "pcc_wss" {
+  type = string
+}
+
+variable "pcc_image" {
+  type = string
+}
+
 data "aws_availability_zones" "available" {}
 
 locals {

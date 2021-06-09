@@ -6,6 +6,14 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type = string
 }
 
+variable "pcc_wss" {
+  type = string
+}
+
+variable "pcc_image" {
+  type = string
+}
+
 variable "key_pair" {
   description = "Key pair to be used on ec2 instances"
   default = "nv-pan"
