@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "twistlock" {
     name = "twistlock"
   }
 }
-
+/*
 resource "kubernetes_cluster_role" "twistlock_view" {
   metadata {
     name = "twistlock-view"
@@ -361,3 +361,4 @@ resource "kubernetes_service" "defender" {
     }
   }
 }
+*/
