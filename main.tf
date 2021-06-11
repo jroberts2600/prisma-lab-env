@@ -7,7 +7,6 @@ module "iam" {
   source = "./iam"
 }
 
-/*
 module "utility" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
@@ -17,6 +16,7 @@ module "utility" {
   source = "./utility"
 }
 
+/*
 module "tpot" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
