@@ -1,3 +1,4 @@
+/*
 resource "kubernetes_deployment" "efs_csi_controller" {
   metadata {
     name = "efs-csi-controller"
@@ -440,3 +441,4 @@ resource "kubernetes_daemonset" "efs_csi_node" {
   }
 }
 
+*/
