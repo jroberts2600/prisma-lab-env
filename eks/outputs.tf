@@ -33,11 +33,12 @@ output "cluster_connect" {
   value       = "aws eks --region ${var.ec2_region} update-kubeconfig --name ${local.cluster_name}"
 }
 
+/*
 output "sock-shop_url" {
   description = "Sock Shop Application"
   value       = kubernetes_service.front_end.status.0.load_balancer.0.ingress.0.hostname
 }
-/*
+
 output "jenkins_url" {
   description = "Jenkins COnsole"
   value       = kubernetes_service.jenkins.status.0.load_balancer.0.ingress.0.hostname

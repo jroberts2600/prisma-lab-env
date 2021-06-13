@@ -1,3 +1,4 @@
+/*
 resource "kubernetes_namespace" "sock_shop" {
   metadata {
     name = "sock-shop"
@@ -1109,3 +1110,4 @@ resource "kubernetes_service" "user" {
     }
   }
 }
+*/
