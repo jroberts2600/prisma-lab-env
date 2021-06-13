@@ -210,7 +210,7 @@ resource "kubernetes_cluster_role_binding" "efs_csi_provisioner_binding" {
   }
 }
 
-resource "kubernetes_csi_driver" "efs.csi.aws.com" {
+resource "kubernetes_csi_driver" "efs_csi_aws_com" {
   metadata {
     name = "efs.csi.aws.com"
 
