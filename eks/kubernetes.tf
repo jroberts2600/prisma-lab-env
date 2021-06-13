@@ -20,3 +20,7 @@ provider "kubernetes" {
   }
 }
 
+module "efs-csi-driver" {
+  source  = "DrFaust92/efs-csi-driver/kubernetes"
+  version = "1.1.0"
+}
