@@ -1,3 +1,4 @@
+/*
 resource "aws_ebs_volume" "jenkins" {
   availability_zone = "us-east-1a"
   size              = 5
@@ -51,3 +52,4 @@ resource "kubernetes_persistent_volume_claim" "pvc" {
     storage_class_name = "gp2-retain"
   }
 }
+*/
