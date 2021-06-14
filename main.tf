@@ -31,3 +31,8 @@ module "eks" {
   flow_role_arn = module.iam.flow_role_arn
   source = "./eks"
 }
+
+module "sock-shop" {
+  ec2_region = var.ec2_region
+  source = "./sock-shop"
+}
