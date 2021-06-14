@@ -36,5 +36,6 @@ module "sock-shop" {
   ec2_region = var.ec2_region
   cluster_endpoint = module.eks.cluster_endpoint
   cluster_ca_cert = module.eks.cluster_ca_cert
+  cluster_name = module.eks.cluster_name
   source = "./sock-shop"
 }
