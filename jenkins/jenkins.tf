@@ -39,7 +39,7 @@ resource "kubernetes_deployment" jenkins {
         }
 
         security_context {
-          fsGroup = 1000
+          fs_group = 1000
         }
 
         container {
