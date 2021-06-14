@@ -5,7 +5,6 @@
 # The Kubernetes provider is included in this file so the EKS module can complete successfully. Otherwise, it throws an error when creating `kubernetes_config_map.aws_auth`.
 # You should **not** schedule deployments and services in this workspace. This keeps workspaces modular (one for provision EKS, another for scheduling Kubernetes resources) as per best practices.
 
-/*
 provider "kubernetes" {
   host                   = var.cluster_endpoint
   cluster_ca_certificate = var.cluster_ca_cert
@@ -16,8 +15,7 @@ provider "kubernetes" {
       "eks",
       "get-token",
       "--cluster-name",
-      data.aws_eks_cluster.cluster.name
+      var.cluster_name
     ]
   }
 }
-*/
