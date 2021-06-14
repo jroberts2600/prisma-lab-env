@@ -25,11 +25,11 @@ output "Kubernetes_Connect" {
   value = module.eks.cluster_connect
 }
 
-/*
 output "Sock-Shop" {
-  value = module.eks.sock-shop_url
+  value = module.sock-shop.sock-shop_url
 }
 
+/*
 output "Jenkins" {
   value = module.eks.jenkins_url
 }

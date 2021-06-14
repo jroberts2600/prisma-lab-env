@@ -4,7 +4,6 @@ resource "kubernetes_namespace" "sock_shop" {
   }
 }
 
-/*
 resource "kubernetes_deployment" "carts_db" {
   metadata {
     name      = "carts-db"
@@ -1110,4 +1109,3 @@ resource "kubernetes_service" "user" {
     }
   }
 }
-*/
