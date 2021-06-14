@@ -15,4 +15,9 @@ variable "cluster_ca_cert" {
   type        = string
 }
 
+variable "pv_name" {
+  type        = string
+  value       = "sock-shop-pv"
+}
+
 data "aws_availability_zones" "available" {}
