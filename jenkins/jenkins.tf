@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "jenkins" {
     name = "jenkins"
   }
 }
-/*
+
 resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
@@ -78,4 +78,3 @@ resource "kubernetes_service" "jenkins" {
     type = "LoadBalancer"
   }
 }
-*/
