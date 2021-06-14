@@ -7,7 +7,6 @@ resource "aws_ebs_volume" "sock-shop" {
   }
 }
 
-/*
 resource "kubernetes_persistent_volume" "pv" {
   metadata {
     name = "pv"
@@ -28,4 +27,3 @@ resource "kubernetes_persistent_volume" "pv" {
     }
   }
 }
-*/
