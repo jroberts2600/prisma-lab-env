@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "jenkins" {
     name = "jenkins"
   }
 }
-/*
+
 resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
@@ -36,6 +36,10 @@ resource "kubernetes_deployment" jenkins {
           persistent_volume_claim {
             claim_name = "jenkins-pvc"
           }
+        }
+
+        security_context {
+          fsGroup = 1000
         }
 
         container {
@@ -78,4 +82,3 @@ resource "kubernetes_service" "jenkins" {
     type = "LoadBalancer"
   }
 }
-*/
