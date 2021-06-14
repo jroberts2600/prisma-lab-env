@@ -47,7 +47,7 @@ resource "kubernetes_persistent_volume_claim" "pvc" {
       }
     }
 
-    volume_name        = jenkins-pv
+    volume_name        = "${kubernetes_persistent_volume.pv.metadata.0.name}"
     storage_class_name = "gp2-retain"
   }
 }
