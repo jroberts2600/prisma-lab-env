@@ -1,9 +1,9 @@
-resource "aws_ebs_volume" "sock-shop" {
+resource "aws_ebs_volume" "jenkins" {
   availability_zone = "us-east-1a"
   size              = 5
 
   tags = {
-    App = "Sock-Shop"
+    App = "jenkins"
   }
 }
 
@@ -22,7 +22,7 @@ resource "kubernetes_persistent_volume" "pv" {
     storage_class_name               = "gp2-retain"
     persistent_volume_source {
       aws_elastic_block_store {
-        volume_id       = aws_ebs_volume.sock-shop.id
+        volume_id       = aws_ebs_volume.jenkins.id
       }
     }
   }
