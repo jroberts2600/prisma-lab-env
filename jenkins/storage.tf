@@ -68,6 +68,7 @@ resource "kubernetes_storage_class" "ebs_sc" {
 resource "kubernetes_persistent_volume_claim" "ebs_claim" {
   metadata {
     name = "jenkins-pvc"
+    namespace = kubernetes_namespace.jenkins.id
   }
 
   spec {
