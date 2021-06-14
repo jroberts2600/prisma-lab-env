@@ -59,7 +59,7 @@ resource "kubernetes_storage_class" "ebs_sc" {
     name = "ebs-sc"
   }
 
-  storage_provisioner = ebs.csi.aws.com
+  storage_provisioner = "ebs.csi.aws.com"
 
   mount_options       = ["debug"]
   volume_binding_mode = "Immediate"
