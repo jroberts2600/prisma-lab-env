@@ -1,4 +1,4 @@
-/*
+
 resource "kubernetes_storage_class" "ebs_sc" {
   metadata {
     name = "ebs-sc"
@@ -30,4 +30,3 @@ resource "kubernetes_persistent_volume_claim" "ebs_claim" {
 }
 
 
-*/
