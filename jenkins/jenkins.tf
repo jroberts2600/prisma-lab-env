@@ -21,16 +21,6 @@ resource "kubernetes_deployment" jenkins {
       }
     }
 
-/*
-    volume {
-      name = "jenkins-home"
-
-      persistent_volume_claim {
-        claim_name = "jenkins-pvc"
-      }
-    }
-*/
-
     template {
       metadata {
         labels = {
@@ -39,6 +29,15 @@ resource "kubernetes_deployment" jenkins {
       }
 
       spec {
+
+        volume {
+          name = "jenkins-home"
+    
+          persistent_volume_claim {
+            claim_name = "jenkins-pvc"
+          }
+        }
+
         container {
           //image = "jenkins/jenkins:lts-jdk11"
           image = "public.ecr.aws/q6t7l4t3/jenkins-tf:0.2"
