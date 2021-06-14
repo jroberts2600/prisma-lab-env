@@ -53,3 +53,34 @@ resource "kubernetes_persistent_volume_claim" "pvc" {
   }
 }
 */
+
+resource "kubernetes_storage_class" "ebs_sc" {
+  metadata {
+    name = "ebs-sc"
+  }
+
+  parameter {}
+
+  mount_options       = ["debug"]
+  volume_binding_mode = "Immediate"
+}
+
+resource "kubernetes_persistent_volume_claim" "ebs_claim" {
+  metadata {
+    name = "ebs-claim"
+  }
+
+  spec {
+    access_modes = ["ReadWriteOnce"]
+
+    resources {
+      requests = {
+        storage = "4Gi"
+      }
+    }
+
+    storage_class_name = "ebs-sc"
+  }
+}
+
+
