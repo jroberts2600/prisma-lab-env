@@ -28,3 +28,25 @@ resource "kubernetes_persistent_volume" "pv" {
   }
 }
 
+resource "kubernetes_persistent_volume_claim" "pvc" {
+  metadata {
+    name = "pvc"
+
+    labels = {
+      app = "jenkins"
+    }
+  }
+
+  spec {
+    access_modes = ["ReadWriteOnce"]
+
+    resources {
+      requests = {
+        storage = "5Gi"
+      }
+    }
+
+    volume_name        = "pv"
+    storage_class_name = "gp2-retain"
+  }
+}
