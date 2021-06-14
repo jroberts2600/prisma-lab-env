@@ -39,8 +39,8 @@ resource "kubernetes_deployment" jenkins {
         }
 
         container {
-          //image = "jenkins/jenkins:lts-jdk11"
-          image = "public.ecr.aws/q6t7l4t3/jenkins-tf:0.2"
+          image = "jenkins/jenkins:lts-jdk11"
+          //image = "public.ecr.aws/q6t7l4t3/jenkins-tf:0.2"
           name = "jenkins"
           port {
             container_port = 8080
