@@ -9,7 +9,7 @@ resource "kubernetes_storage_class" "ebs_sc" {
   mount_options       = ["debug"]
   volume_binding_mode = "Immediate"
 }
-
+/*
 resource "kubernetes_persistent_volume_claim" "ebs_claim" {
   metadata {
     name = "jenkins-pvc"
@@ -28,5 +28,5 @@ resource "kubernetes_persistent_volume_claim" "ebs_claim" {
     storage_class_name = "ebs-sc"
   }
 }
-
+*/
 
