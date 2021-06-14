@@ -30,7 +30,8 @@ resource "kubernetes_persistent_volume" "pv" {
 
 resource "kubernetes_persistent_volume_claim" "pvc" {
   metadata {
-    name = "pvc"
+    name = "jenkins-pvc"
+    namespace = kubernetes_namespace.jenkins.id
 
     labels = {
       app = "jenkins"
@@ -46,7 +47,7 @@ resource "kubernetes_persistent_volume_claim" "pvc" {
       }
     }
 
-    volume_name        = "pv"
+    volume_name        = kubernetes_persistent_volume.pv.name
     storage_class_name = "gp2-retain"
   }
 }
