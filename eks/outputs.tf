@@ -9,6 +9,11 @@ output "cluster_endpoint" {
   value       = data.aws_eks_cluster.cluster.endpoint
 }
 
+output "cluster_ca_cert" {
+  description = "Cluster Certificate."
+  value       = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+}
+
 output "cluster_security_group_id" {
   description = "Security group ids attached to the cluster control plane."
   value       = module.eks.cluster_security_group_id
