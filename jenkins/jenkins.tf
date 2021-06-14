@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "jenkins" {
     name = "jenkins"
   }
 }
-/*
+
 resource "kubernetes_deployment" jenkins {
   metadata {
     name = "jenkins"
@@ -13,6 +13,13 @@ resource "kubernetes_deployment" jenkins {
     }
   }
   spec {
+    volume {
+      name = "jenkins-home"
+
+      persistent_volume_claim {
+        claim_name = "jenkins-pvc"
+      }
+    }
     replicas = 1
     selector {
       match_labels = {
@@ -66,4 +73,3 @@ resource "kubernetes_service" "jenkins" {
     type = "LoadBalancer"
   }
 }
-*/
