@@ -16,7 +16,6 @@ module "utility" {
   source = "./utility"
 }
 
-/*
 module "tpot" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
@@ -24,7 +23,6 @@ module "tpot" {
   flow_role_arn = module.iam.flow_role_arn
   source = "./tpot"
 }
-*/
 
 module "eks" {
   ec2_region = var.ec2_region
@@ -40,6 +38,7 @@ module "sock-shop" {
   source = "./sock-shop"
 }
 
+/*
 module "jenkins" {
   ec2_region = var.ec2_region
   cluster_endpoint = module.eks.cluster_endpoint
@@ -47,3 +46,4 @@ module "jenkins" {
   cluster_name = module.eks.cluster_name
   source = "./jenkins"
 }
+*/
