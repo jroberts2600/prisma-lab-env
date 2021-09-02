@@ -1,3 +1,4 @@
+/*
 resource "aws_instance" "tpot" {
   ami           = var.ec2_ami[var.ec2_region]
   instance_type = var.ec2_instance_type
@@ -16,3 +17,4 @@ resource "aws_instance" "tpot" {
   vpc_security_group_ids      = [aws_security_group.tpot.id]
   associate_public_ip_address = true
 }
+*/
