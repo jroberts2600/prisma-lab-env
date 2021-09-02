@@ -15,7 +15,7 @@ module "utility" {
   flow_role_arn = module.iam.flow_role_arn
   source = "./utility"
 }
-/*
+
 module "tpot" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
@@ -23,7 +23,7 @@ module "tpot" {
   flow_role_arn = module.iam.flow_role_arn
   source = "./tpot"
 }
-*/
+
 module "eks" {
   ec2_region = var.ec2_region
   flow_role_arn = module.iam.flow_role_arn
