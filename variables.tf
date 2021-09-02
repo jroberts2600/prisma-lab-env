@@ -19,6 +19,6 @@ variable "ec2_region" {
 }
 
 variable "admin_ip" {
-  default     = ["24.178.240.50/32"]
+  default     = ["34.99.91.241/32"]
   description = "admin IP addresses in CIDR format"
 }
