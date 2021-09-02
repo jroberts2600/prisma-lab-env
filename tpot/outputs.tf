@@ -1,3 +1,4 @@
+/*
 output "Admin_UI" {
   value = "https://${aws_instance.tpot.public_dns}:64294/"
 }
@@ -10,3 +11,4 @@ output "Web_UI" {
   value = "https://${aws_instance.tpot.public_dns}:64297/"
 }
 
+*/
