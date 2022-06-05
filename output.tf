@@ -21,6 +21,7 @@ output "T-Pot_Web_UI" {
 // Kubernetes Specific Outputs
 //
 
+/*
 output "Kubernetes_Connect" {
   value = module.eks.cluster_connect
 }
@@ -28,6 +29,7 @@ output "Kubernetes_Connect" {
 output "Sock-Shop" {
   value = module.sock-shop.sock-shop_url
 }
+*/
 
 /*
 output "Jenkins" {

@@ -24,12 +24,15 @@ module "tpot" {
   source = "./tpot"
 }
 
+/*
 module "eks" {
   ec2_region = var.ec2_region
   flow_role_arn = module.iam.flow_role_arn
   source = "./eks"
 }
+*/
 
+/*
 module "sock-shop" {
   ec2_region = var.ec2_region
   cluster_endpoint = module.eks.cluster_endpoint
@@ -37,6 +40,7 @@ module "sock-shop" {
   cluster_name = module.eks.cluster_name
   source = "./sock-shop"
 }
+*/
 
 /*
 module "jenkins" {
