@@ -8,6 +8,7 @@ module "iam" {
 }
 
 module "route53" {
+  utility_ip = module.utility.utility_instance_public_ip
   source = "./route53"
 }
 
