@@ -1,3 +1,3 @@
-//output "demo-bucket" {
-  //value = aws_s3_bucket.demo-bucket.bucket
-//}
+output "private-bucket" {
+  value = aws_s3_bucket.private-bucket.id
+}

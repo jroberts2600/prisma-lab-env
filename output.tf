@@ -13,8 +13,8 @@ output "Utility_Instance_SSH_Access" {
 output "Web_Instance_SSH_Access" {
   value = module.ec2.web_instance_public_ip
 }
+*/
 
 output "demo-bucket" {
-  value = module.s3.aws_s3_bucket
+  value = module.s3.private-bucket
 }
-*/
