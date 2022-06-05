@@ -12,7 +12,6 @@ module "s3" {
   source = "./modules/s3"
 }
 
-/*
 module "ec2" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
@@ -21,4 +20,3 @@ module "ec2" {
   flow_role_arn = module.iam.flow_role_arn
   source = "./modules/ec2"
 }
-*/
