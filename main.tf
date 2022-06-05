@@ -7,11 +7,6 @@ module "iam" {
   source = "./iam"
 }
 
-module "route53" {
-  utility_ip = module.utility.utility_instance_public_ip
-  source = "./route53"
-}
-
 module "utility" {
   key_pair = var.key_pair
   ec2_region = var.ec2_region
