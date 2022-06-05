@@ -92,3 +92,20 @@ resource "aws_security_group" "allow_http" {
   }
 }
 
+resource "aws_security_group" "allow_outbound" {
+  name        = "allow_outbound_sg"
+  description = "Allow outbound connections"
+  vpc_id = aws_vpc.utility.id
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow_outbound_sg"
+  }
+}
+
