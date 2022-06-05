@@ -2,6 +2,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
+module "route53" {
+  source = "./route53"
+}
+
 module "iam" {
   ec2_region = var.ec2_region
   source = "./iam"
