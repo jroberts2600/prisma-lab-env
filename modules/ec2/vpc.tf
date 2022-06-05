@@ -4,7 +4,7 @@ resource "aws_vpc" "utility" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "utility-vpc-${random_string.suffix.id}"
+    Name = "ec2-vpc-${random_string.suffix.id}"
   }
 }
 
