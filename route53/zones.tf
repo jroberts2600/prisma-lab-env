@@ -2,7 +2,7 @@ resource "aws_route53_zone" "primary" {
   name = "foobar.io"
 }
 
-resource "aws_route53_recors" "demo" {
+resource "aws_route53_record" "demo" {
   zone_id = aws_route53_zone.primary.zone_id
   name    = "foobar.io"
   type    = "A"
