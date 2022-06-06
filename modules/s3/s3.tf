@@ -18,57 +18,6 @@ resource "aws_s3_bucket" "private-bucket" {
   bucket = "private-${random_string.suffix.id}"
 }
 
-
-resource "aws_s3_bucket_versioning" "private-bucket" {
-  bucket = aws_s3_bucket.private-bucket.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
-resource "aws_s3_bucket" "destination" {
-  bucket = aws_s3_bucket.private-bucket.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
-resource "aws_iam_role" "replication" {
-  name = "aws-iam-role"
-  assume_role_policy = <<POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "s3.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
-}
-POLICY
-}
-
-resource "aws_s3_bucket_replication_configuration" "private-bucket" {
-  depends_on = [aws_s3_bucket_versioning.private-bucket]
-  role   = aws_iam_role.private-bucket.arn
-  bucket = aws_s3_bucket.private-bucket.id
-  rule {
-    id = "foobar"
-    status = "Enabled"
-    destination {
-      bucket        = aws_s3_bucket.destination.arn
-      storage_class = "STANDARD"
-    }
-  }
-}
-
-
-
-
 resource "aws_s3_bucket_acl" "private_bucket_acl" {
   bucket = aws_s3_bucket.private-bucket.id
   acl    = "private"
