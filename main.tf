@@ -14,6 +14,7 @@ module "kms" {
 
 module "s3" {
   ec2_region = var.ec2_region
+  s3_key_arn = module.kms.s3_key_arn
   source = "./modules/s3"
 }
 
