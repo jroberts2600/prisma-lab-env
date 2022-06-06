@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "marketing" {
 
 resource "aws_s3_bucket_acl" "marketing" {
   bucket = aws_s3_bucket.marketing.id
-  acl    = "public"
+  acl    = "private"
 }
 
 resource "aws_s3_bucket_versioning" "marketing" {
