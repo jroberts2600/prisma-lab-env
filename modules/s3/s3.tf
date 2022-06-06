@@ -30,6 +30,16 @@ resource "aws_s3_bucket_versioning" "private_versioning" {
   }
 }
 
+resource "aws_s3_bucket_server_side_encryption_configuration" "private_encryption" {
+  bucket = aws_s3_bucket.private-bucket
+  rule {
+    apply_server_side_encryption_by_default {
+        kms_master_key_id = var.s3_key_arn
+        sse_algorithm     = "aws:kms"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "log-bucket-${random_string.suffix.id}"
 }
