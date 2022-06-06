@@ -31,7 +31,7 @@ resource "aws_s3_bucket_versioning" "private_versioning" {
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "private_encryption" {
-  bucket = aws_s3_bucket.private-bucket
+  bucket = aws_s3_bucket.private-bucket.id
   rule {
     apply_server_side_encryption_by_default {
         kms_master_key_id = var.s3_key_arn
