@@ -109,3 +109,20 @@ resource "aws_security_group" "allow_outbound" {
   }
 }
 
+resource "aws_default_security_group" "default" {
+  vpc_id = aws_vpc.utility.id
+
+    ingress {
+    protocol  = -1
+    self      = true
+    from_port = 0
+    to_port   = 0
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+  }
+  
+}
