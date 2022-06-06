@@ -13,3 +13,19 @@ resource "aws_s3_bucket_versioning" "private_versioning" {
     status = "Enabled"
   }
 }
+
+resource "aws_s3_bucket" "log_bucket" {
+  bucket = "log-bucket-${random_string.suffix.id}"
+}
+
+resource "aws_s3_bucket_acl" "log_bucket_acl" {
+  bucket = aws_s3_bucket.log_bucket.id
+  acl    = "log-delivery-write"
+}
+
+resource "aws_s3_bucket_logging" "private" {
+  bucket = aws_s3_bucket.private-bucket.id
+
+  target_bucket = aws_s3_bucket.log_bucket.id
+  target_prefix = "log/"
+}
