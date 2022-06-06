@@ -7,6 +7,11 @@ module "iam" {
   source = "./modules/iam"
 }
 
+module "kms" {
+  ec2_region = var.ec2_region
+  source = "./modules/kms"
+}
+
 module "s3" {
   ec2_region = var.ec2_region
   source = "./modules/s3"
