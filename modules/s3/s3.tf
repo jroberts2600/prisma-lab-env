@@ -1,3 +1,19 @@
+resource "aws_s3_bucket" "marketing" {
+  bucket = "marketing-${random_string.suffix.id}"
+}
+
+resource "aws_s3_bucket_acl" "marketing" {
+  bucket = aws_s3_bucket.marketing.id
+  acl    = "public"
+}
+
+resource "aws_s3_bucket_versioning" "marketing" {
+  bucket = aws_s3_bucket.marketing.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 resource "aws_s3_bucket" "private-bucket" {
   bucket = "private-${random_string.suffix.id}"
 }
@@ -23,9 +39,16 @@ resource "aws_s3_bucket_acl" "log_bucket_acl" {
   acl    = "log-delivery-write"
 }
 
+resource "aws_s3_bucket_logging" "marketing" {
+  bucket = aws_s3_bucket.marketing.id
+
+  target_bucket = aws_s3_bucket.log_bucket.id
+  target_prefix = "marketing-log/"
+}
+
 resource "aws_s3_bucket_logging" "private" {
   bucket = aws_s3_bucket.private-bucket.id
 
   target_bucket = aws_s3_bucket.log_bucket.id
-  target_prefix = "log/"
+  target_prefix = "private-log/"
 }
