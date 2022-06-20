@@ -64,7 +64,7 @@ resource "aws_instance" "web-server" {
     EOF
 
   tags = {
-    Name = "web-server"
+    Name = "Web Instance"
   }
   metadata_options {
     http_endpoint = "enabled"
