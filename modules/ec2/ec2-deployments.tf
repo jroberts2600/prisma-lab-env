@@ -59,7 +59,7 @@ resource "aws_instance" "web-server" {
     sudo apt install jq -y
     AUTH_DATA="$(printf '{ "username": "%s", "password": "%s" }' "${var.pcc_username}" "${var.pcc_password}")"
     TOKEN=$(curl -sSLk -d "$AUTH_DATA" -H 'content-type: application/json' "${var.pcc_url}/api/v1/authenticate" | jq -r ' .token ')
-    DOMAIN_NAME=`echo $URL | cut -d'/' -f3 | cut -d':' -f1`
+    DOMAIN_NAME=`echo ${var.pcc_url} | cut -d'/' -f3 | cut -d':' -f1`
     curl -sSLk -H "authorization: Bearer $TOKEN" -X POST "${var.pcc_url}/api/v1/scripts/defender.sh" | sudo bash -s -- -c $DOMAIN_NAME -d "none" -m
     EOF
 
