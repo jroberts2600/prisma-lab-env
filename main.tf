@@ -25,4 +25,7 @@ module "ec2" {
   ssm_policy = module.iam.ssm_policy
   flow_role_arn = module.iam.flow_role_arn
   source = "./modules/ec2"
+  pcc_url = var.PCC_URL
+  pcc_username = var.PCC_ACCESS_KEY_ID
+  pcc_password = var.PCC_SECRET_ACCESS_KEY
 }

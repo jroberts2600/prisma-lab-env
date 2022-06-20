@@ -6,6 +6,18 @@ variable "AWS_SECRET_ACCESS_KEY" {
   type = string
 }
 
+variable "PCC_ACCESS_KEY_ID" {
+  type = string
+}
+
+variable "PCC_SECRET_ACCESS_KEY" {
+  type = string
+}
+
+variable "PCC_URL" {
+  type = string
+}
+
 variable "key_pair" {
   description = "Key pair to be used on ec2 instances"
   default = "nv-pan"
