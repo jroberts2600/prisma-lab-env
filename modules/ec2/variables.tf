@@ -17,3 +17,15 @@ variable "flow_role_arn" {
 variable "ssm_policy" {
   type = string
 }
+
+variable "pcc_url" {
+  type = string
+}
+
+variable "pcc_username" {
+  type = string
+}
+
+variable "pcc_password" {
+  type = string
+}
