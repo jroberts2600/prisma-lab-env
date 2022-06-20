@@ -31,7 +31,7 @@ resource "aws_instance" "web_instance" {
   }
 }
 */
-
+/*
 resource "aws_instance" "web-server" {
   ami               = "ami-042e8287309f5df03" 
   instance_type     = "t2.micro"
@@ -71,3 +71,4 @@ resource "aws_instance" "web-server" {
     http_tokens = "required"
   }
 }
+*/
