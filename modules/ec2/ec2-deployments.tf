@@ -32,6 +32,7 @@ resource "aws_instance" "web_instance" {
 }
 */
 
+/*
 resource "aws_instance" "web-server" {
   ami               = "ami-042e8287309f5df03" 
   instance_type     = "t2.micro"
@@ -61,6 +62,11 @@ resource "aws_instance" "web-server" {
     TOKEN=$(curl -sSLk -d "$AUTH_DATA" -H 'content-type: application/json' "${var.pcc_url}/api/v1/authenticate" | jq -r ' .token ')
     DOMAIN_NAME=`echo ${var.pcc_url} | cut -d'/' -f3 | cut -d':' -f1`
     curl -sSLk -H "authorization: Bearer $TOKEN" -X POST "${var.pcc_url}/api/v1/scripts/defender.sh" | sudo bash -s -- -c $DOMAIN_NAME -d "none" -m
+    docker network create dirty-net
+    docker container run -itd --rm --name vul-app-1 --network dirty-net fefefe8888/l4s-demo-app:1.0
+    docker container run -itd --rm --name vul-app-2 --network dirty-net fefefe8888/l4s-demo-app:1.0
+    docker container run -itd --rm --name att-svr --network dirty-net fefefe8888/l4s-demo-svr:1.0
+    docker container run -itd --rm --network dirty-net --name attacker-machine fefefe8888/my-ubuntu:18.04
     EOF
 
   tags = {
@@ -71,3 +77,4 @@ resource "aws_instance" "web-server" {
     http_tokens = "required"
   }
 }
+*/
