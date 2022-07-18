@@ -1,10 +1,8 @@
 variable "AWS_ACCESS_KEY_ID" {
-  default = "AKIAVH4JNTRMWOYXRHEL"
   type = string
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
-  default = "mJ0Xdo/7Jg01Pra5ehmM1tqu4CuvRwzUnIQZ9Gf/"
   type = string
 }
 
