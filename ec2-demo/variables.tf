@@ -1,8 +1,10 @@
 variable "AWS_ACCESS_KEY_ID" {
+  default = "AKIAVH4JNTRMWOYXRHEL"
   type = string
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
+  default = "mJ0Xdo/7Jg01Pra5ehmM1tqu4CuvRwzUnIQZ9Gf/"
   type = string
 }
 
@@ -20,17 +22,14 @@ variable "PCC_URL" {
 
 variable "key_pair" {
   description = "Key pair to be used on ec2 instances"
-  default = "nv-pan"
   type = string
 }
 
-variable "ec2_region" {
+variable "region" {
   description = "AWS region to launch servers"
-  default     = "us-east-1"
   type = string
 }
 
 variable "admin_ip" {
-  default     = ["97.88.199.147/32"]
   description = "admin IP addresses in CIDR format"
 }

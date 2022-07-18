@@ -1,8 +1,9 @@
 provider "aws" {
-  region = var.ec2_region
+  region = var.region
 }
 
 resource "random_string" "suffix" {
-  length  = 4
+  length  = 8
   special = false
+  upper   = false
 }
